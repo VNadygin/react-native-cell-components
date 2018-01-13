@@ -17,14 +17,12 @@ class DatePicker extends React.Component {
   static defaultProps = {
     date: new Date(),
     mode: 'date',
-    cancelText: 'Done',
     minDate: new Date(),
   }
 
   static propTypes = {
     date: PropTypes.object.isRequired,
     onDateSelected: PropTypes.func,
-    cancelText: PropTypes.string,
     minDate: PropTypes.object,
   }
 
@@ -89,7 +87,7 @@ class DatePicker extends React.Component {
       theme.isIOS ?
       <ActionSheet
         ref={component => this._actionSheet = component}
-        cancelText={this.props.cancelText}
+        cancelText='Done'
       >
         <DatePickerIOS
           date={this.state.date}
