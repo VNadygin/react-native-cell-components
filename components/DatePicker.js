@@ -25,8 +25,7 @@ class DatePicker extends React.Component {
     date: PropTypes.object.isRequired,
     onDateSelected: PropTypes.func,
     cancelText: PropTypes.string,
-    minDate: PropTypes.instanceOf(Date),
-    maxDate: PropTypes.instanceOf(Date),
+    minDate: PropTypes.object,
   }
 
   constructor(props) {
@@ -53,7 +52,6 @@ class DatePicker extends React.Component {
         const {action, year, month, day} = await DatePickerAndroid.open({
           date: this.state.date,
           minDate: this.props.minDate,
-          maxDate: this.props.maxDate
         });
 
         if (action !== DatePickerAndroid.dismissedAction) {
@@ -98,7 +96,6 @@ class DatePicker extends React.Component {
           mode={this.props.mode}
           onDateChange={this.handleOnDateChange}
           minimumDate={this.props.minDate}
-          maximumDate={this.props.maximumDate}
         />
       </ActionSheet> :
       <View />
