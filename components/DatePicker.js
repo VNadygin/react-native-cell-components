@@ -51,7 +51,7 @@ class DatePicker extends React.Component {
       if (this.props.mode === 'date') {
         const {action, year, month, day} = await DatePickerAndroid.open({
           date: this.state.date,
-          // minDate: this.props.minDate,
+          minDate: this.props.minDate,
         });
 
         if (action !== DatePickerAndroid.dismissedAction) {
@@ -95,7 +95,7 @@ class DatePicker extends React.Component {
           date={this.state.date}
           mode={this.props.mode}
           onDateChange={this.handleOnDateChange}
-          // minimumDate={this.props.minDate}
+          minimumDate={this.props.minDate}
         />
       </ActionSheet> :
       <View />
