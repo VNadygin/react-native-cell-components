@@ -25,8 +25,8 @@ class DatePicker extends React.Component {
     date: PropTypes.object.isRequired,
     onDateSelected: PropTypes.func,
     cancelText: PropTypes.string,
-    minDate: PropTypes.date,
-    maxDate: PropTypes.date,
+    minDate: PropTypes.instanceOf(Date),
+    maxDate: PropTypes.instanceOf(Date),
   }
 
   constructor(props) {
